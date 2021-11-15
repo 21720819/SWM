@@ -32,7 +32,7 @@ class DeclareWriteActivity : AppCompatActivity() {
             val content = binding.contentArea.text.toString()
             val uid = FireBaseAuth.getUid()
 
-            val key = FireBaseRef.DeclareRef.key.toString()
+            val key = FireBaseRef.DeclareRef.push().key.toString()
 
             // 파이어베이스 storage에 이미지를 저장하고 싶을 때
             // 게시글을 클릭했을 때, 게시글에 대한 정보를 받아와야 하는데
