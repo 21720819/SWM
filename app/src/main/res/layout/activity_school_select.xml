@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bg_SchoolSelect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SchoolSelect">
+
+    <TextView
+        android:id="@+id/tv_SchoolSelect_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text=" 학교 이메일"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_SchoolSelect_email"
+        app:layout_constraintStart_toStartOf="@+id/et_SchoolSelect_email" />
+
+    <Spinner
+        android:id="@+id/sp_SchoolSelect_email"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/et_sp_bg"
+        android:paddingLeft="15dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/et_SchoolSelect_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_SchoolSelect_sym"
+        app:layout_constraintTop_toTopOf="@+id/et_SchoolSelect_email" />
+
+    <TextView
+        android:id="@+id/tv_SchoolSelect_sym"
+        android:layout_width="16dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="3dp"
+        android:gravity="center"
+        android:text="@"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_SchoolSelect_email"
+        app:layout_constraintStart_toEndOf="@+id/et_SchoolSelect_email"
+        app:layout_constraintTop_toTopOf="@+id/et_SchoolSelect_email" />
+
+    <EditText
+        android:id="@+id/et_SchoolSelect_email"
+        android:layout_width="145dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/et_sp_bg"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_SchoolSelect" />
+
+    <Spinner
+        android:id="@+id/sp_SchoolSelect"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/et_sp_bg"
+        android:paddingLeft="15dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_SchoolSelect_subtitle" />
+
+    <android.widget.Button
+        android:id="@+id/btn_SchoolSelect"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/bt_bg"
+        android:text="다음"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/sp_SchoolSelect" />
+
+    <TextView
+        android:id="@+id/tv_SchoolSelect_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="학교 선택"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_SchoolSelect_title" />
+
+    <TextView
+        android:id="@+id/tv_SchoolSelect_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="회원가입"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

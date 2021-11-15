@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Success">
+
+    <android.widget.Button
+        android:id="@+id/btn_Success"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/bt_bg"
+        android:text="로그인하기"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_Success"
+        app:layout_constraintStart_toStartOf="@+id/tv_Success"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Success" />
+
+    <ImageView
+        android:id="@+id/iv_Success"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="125dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cong" />
+
+    <TextView
+        android:id="@+id/tv_Success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="회원가입에 성공했어요!\n지금부터 쉐어윗미를 이용해보세요!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_Success"
+        app:layout_constraintStart_toStartOf="@+id/iv_Success"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Success" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
