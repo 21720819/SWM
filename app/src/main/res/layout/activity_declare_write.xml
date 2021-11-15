@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".board.BoardWriteActivity"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_logo"/>
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="글 쓰기"
+                android:textSize="22sp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#000000"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/titleArea"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="제목"
+                    android:layout_height="60dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#000000"/>
+
+                <EditText
+                    android:id="@+id/contentArea"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:hint="내용을 작성해주세요"
+                    android:background="@android:color/transparent"
+                    android:layout_height="100dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#000000"/>
+
+                <ImageView
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_explain"/>
+
+                <Button
+                    android:id="@+id/writeBtn"
+                    android:text="고객센터에 글 올리기"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/background_radius_purple"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/imageArea"
+            android:src="@drawable/img_camera_bk"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+</layout>

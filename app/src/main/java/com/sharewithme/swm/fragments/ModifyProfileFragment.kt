@@ -100,8 +100,8 @@ class ModifyProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_modifyProfileFragment_to_homeFragment)
         }
 
-        binding.tipTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_modifyProfileFragment_to_tipFragment)
+        binding.declareTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_modifyProfileFragment_to_declareFragment)
         }
 
         binding.talkTap.setOnClickListener {

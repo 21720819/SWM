@@ -172,7 +172,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout4">
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -196,14 +196,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout4"
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@color/white"
-                android:weightSum="4"
+                android:weightSum="5"
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <ImageView
@@ -211,32 +217,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/img_home" />
-
+                    android:src="@drawable/img_checked" />
                 <ImageView
-                    android:id="@+id/tipTap"
+                    android:id="@+id/declareTap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/img_write" />
+                    android:src="@drawable/img_checked" />
 
                 <ImageView
                     android:id="@+id/talkTap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/img_cus" />
+                    android:src="@drawable/img_checked" />
 
                 <ImageView
                     android:id="@+id/bookmarkTap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/img_pro" />
+                    android:src="@drawable/img_checked" />
 
+                <ImageView
+                    android:id="@+id/storeTap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/img_checked" />
 
             </LinearLayout>
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

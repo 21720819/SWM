@@ -56,8 +56,8 @@ class ProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
         }
 
-        binding.tipTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_profileFragment_to_tipFragment)
+        binding.declareTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_declareFragment)
         }
 
         binding.talkTap.setOnClickListener {

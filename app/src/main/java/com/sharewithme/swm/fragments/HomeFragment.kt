@@ -36,9 +36,9 @@ class HomeFragment : Fragment() {
 
 
 
-        binding.CustomerSvTap.setOnClickListener {
+        binding.declareTap.setOnClickListener {
             Log.d("HomeFragment", "tipTap")
-            it.findNavController().navigate(R.id.action_homeFragment_to_tipFragment)
+            it.findNavController().navigate(R.id.action_homeFragment_to_declareFragment)
         }
 
         binding.talkTap.setOnClickListener {
@@ -51,12 +51,12 @@ class HomeFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
 
-//        binding.storeTap.setOnClickListener {
-//            it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
-//        }
+        binding.storeTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
+        }
 
         binding.category1.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_tipFragment)
+            it.findNavController().navigate(R.id.action_homeFragment_to_declareFragment)
         }
 
         binding.category2.setOnClickListener {
@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.category4.setOnClickListener {
-//            it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
+            it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
         }
 
         //rvAdapter = BookmarkRVAdapter(requireContext(), items, itemKeyList, bookmarkIdList)
