@@ -22,22 +22,12 @@ class ProfileFragment : Fragment() {
 
     private lateinit var binding : FragmentProfileBinding
 
-
     private lateinit var sharedPreferences : SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
 
   //  private val TAG = ProfileFragment::class.java.simpleName
     private var auth: FirebaseAuth? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-//        var userName = view?.findViewById<TextView>(R.id.userNameTv)
-//        userName!!.text=
-
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,6 +42,11 @@ class ProfileFragment : Fragment() {
             logOut()
         }
 
+        //하단바
+        binding.btnMyprofileGoModifyPro.setOnClickListener{
+            it.findNavController().navigate(R.id.action_profileFragment_to_modifyProfileFragment)
+        }
+
         binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_profileFragment_to_homeFragment)
         }
@@ -60,13 +55,16 @@ class ProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_profileFragment_to_declareFragment)
         }
 
-        binding.talkTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_profileFragment_to_talkFragment)
+        binding.boardTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_boardFragment)
         }
 
-        binding.btnMyprofileGoModifyPro.setOnClickListener {
-            it.findNavController().navigate(R.id.action_profileFragment_to_modifyProfileFragment)
+        //binding.profileTap.setOnClickListener {}
+
+        binding.mapTap.setOnClickListener{
+            it.findNavController().navigate(R.id.action_profileFragment_to_mapFragment)
         }
+
         return binding.root
     }
 

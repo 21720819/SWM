@@ -1,36 +1,19 @@
 package com.sharewithme.swm.fragments
-
-import android.content.ContentValues.TAG
-import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.*
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
-import com.sharewithme.swm.databinding.FragmentModifyProfileBinding
 import com.sharewithme.swm.R
-import com.sharewithme.swm.UserInfo
-import kotlinx.android.synthetic.main.activity_info.*
-import kotlinx.android.synthetic.main.activity_info.et_Info_nick
+import com.sharewithme.swm.databinding.FragmentModifyProfileBinding
 import kotlinx.android.synthetic.main.fragment_modify_profile.*
-import java.io.ByteArrayOutputStream
 
 
 class ModifyProfileFragment : Fragment() {
@@ -44,18 +27,13 @@ class ModifyProfileFragment : Fragment() {
     var nick: String = ""
     var nicks = mutableListOf("")
     var chS : Boolean= false
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         auth = FirebaseAuth.getInstance()
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_modify_profile, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_modify_profile, container, false)
 
         getNickname()
 
@@ -94,8 +72,9 @@ class ModifyProfileFragment : Fragment() {
 
         }
         binding.imageButton.setOnClickListener{
-
         }
+
+       //하단바
         binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_modifyProfileFragment_to_homeFragment)
         }
@@ -104,8 +83,14 @@ class ModifyProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_modifyProfileFragment_to_declareFragment)
         }
 
-        binding.talkTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_modifyProfileFragment_to_talkFragment)
+        binding.boardTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_modifyProfileFragment_to_boardFragment)
+        }
+
+        //binding.profileTap.setOnClickListener {}
+
+        binding.mapTap.setOnClickListener{
+            it.findNavController().navigate(R.id.action_modifyProfileFragment_to_mapFragment)
         }
 
         return binding.root
