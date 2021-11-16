@@ -65,20 +65,23 @@ class DeclareFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.homeTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_declareFragment_to_homeFragment)
+         binding.homeTap.setOnClickListener {
+             it.findNavController().navigate(R.id.action_declareFragment_to_homeFragment)
+         }
+
+        //하단바
+       // binding.declareTap.setOnClickListener {}
+
+        binding.boardTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_declareFragment_to_boardFragment)
         }
 
-//        binding.declareTap.setOnClickListener {
-//            it.findNavController().navigate(R.id.action_declareFragment_to_declareFragment)
-//        }
-
-        binding.talkTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_declareFragment_to_talkFragment)
+        binding.profileTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_declareFragment_to_profileFragment)
         }
 
-        binding.storeTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_declareFragment_to_storeFragment)
+        binding.mapTap.setOnClickListener{
+            it.findNavController().navigate(R.id.action_declareFragment_to_mapFragment)
         }
 
         getFBDeclareData()
