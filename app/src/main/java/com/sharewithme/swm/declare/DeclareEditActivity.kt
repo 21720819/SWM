@@ -22,7 +22,6 @@ import com.sharewithme.swm.utils.FireBaseRef
 import java.io.ByteArrayOutputStream
 
 class DeclareEditActivity : AppCompatActivity() {
-
     private lateinit var binding : ActivityDeclareEditBinding
     private lateinit var key:String // key값
     private lateinit var writerUid : String // uid값

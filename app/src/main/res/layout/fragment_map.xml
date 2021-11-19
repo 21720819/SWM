@@ -1,98 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
-
-<FrameLayout
+<layout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MapFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <WebView
-            android:id="@+id/mapView"
+        <com.google.android.gms.maps.MapView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-        <!-- 하단바 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout">
-            <!-- Home 선택시 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <!-- Declare 선택시 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <!-- Board 선택시 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <!-- 프로필 선택시 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-            <!-- 지도 선택시 -->
-            <LinearLayout
-                android:background="@color/mainColor"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/white"
-            android:weightSum="5"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <ImageView
-                android:id="@+id/homeTap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/img_home_bold_512" />
-            <ImageView
-                android:id="@+id/declareTap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/img_service_bold_512" />
-
-            <ImageView
-                android:id="@+id/boardTap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/img_list_bold_512" />
-
-            <ImageView
-                android:id="@+id/profileTap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/img_profile_bold_512" />
-
-            <ImageView
-                android:id="@+id/mapTap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/img_map_light_512" />
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/mapView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
-
 </layout>
