@@ -27,7 +27,6 @@ class DeclareWriteActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_declare_write)
 
         binding.writeBtn.setOnClickListener {
-
             val title = binding.titleArea.text.toString()
             val content = binding.contentArea.text.toString()
             val uid = FireBaseAuth.getUid()
