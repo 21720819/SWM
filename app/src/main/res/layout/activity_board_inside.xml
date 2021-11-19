@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".board.BoardInsideActivity" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/img_logo" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="90dp"
+                        android:src="@drawable/img_board" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="게시판"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/imgSettingIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="115dp"
+                        android:src="@drawable/main_menu"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black">
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvPostTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="title"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="230dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="start"
+                            android:text="1000원"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvPlace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:drawableLeft="@drawable/img_location"
+                            android:drawablePadding="5dp"
+                            android:text="장소" />
+
+                        <TextView
+                            android:id="@+id/tvDatetime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="20dp"
+
+                            android:layout_marginTop="5dp"
+                            android:drawableLeft="@drawable/img_time"
+                            android:drawablePadding="5dp"
+                            android:text="시간과 날짜" />
+
+                        <TextView
+                            android:id="@+id/tvTotalNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="130dp"
+                            android:layout_marginTop="5dp"
+                            android:drawablePadding="10dp"
+                            android:gravity="start"
+                            android:text="전체 15명"
+                            android:textColor="@color/design_default_color_primary"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black">
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvNickName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="닉네임"
+                    android:textColor="#431AAC"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvWrittenTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+
+                    android:text="time"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/background_radius"
+                    android:padding="10dp"
+                    android:text="여기는 내용 영역"
+                    android:textColor="@color/black" />
+
+
+                <ImageView
+                    android:id="@+id/imgWatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="30dp" />
+
+
+                <ListView
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:layout_height="60dp">
+
+            <EditText
+                android:id="@+id/tvComment"
+                android:hint="댓글을 입력해주세요"
+                android:layout_marginLeft="10dp"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="10dp" />
+
+            <ImageView
+                android:id="@+id/btnComment"
+                android:src="@drawable/btnwrite"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

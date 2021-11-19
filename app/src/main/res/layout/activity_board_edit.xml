@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.WritePostFragment"
+        android:background="@color/white">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img_logo" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="120dp"
+                    android:gravity="center"
+                    android:text="글 수정"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!-- 완료 버튼 -->
+                <ImageButton
+                    android:id="@+id/imgBtnCompleted"
+                    android:layout_width="48dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/img_completed" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C4C4C4"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <!-- 글 제목 입력 -->
+                        <EditText
+                            android:id="@+id/etTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/edge"
+                            android:ems="10"
+                            android:hint="제목"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="#C4C4C4"
+                            android:textSize="20sp"
+                            tools:targetApi="o" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#C4C4C4" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <!-- 가격 입력 -->
+
+
+                        <EditText
+                            android:id="@+id/etPrice"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/edge"
+                            android:drawableEnd="@drawable/img_won"
+                            android:drawableRight="@drawable/img_won"
+                            android:drawablePadding="10dp"
+                            android:ems="10"
+                            android:gravity="end"
+                            android:hint="가격"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="#C4C4C4"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etTotalNum"
+                            android:layout_width="195dp"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:drawableEnd="@drawable/img_nop"
+                            android:drawableRight="@drawable/img_nop"
+                            android:drawablePadding="10dp"
+                            android:ems="10"
+                            android:gravity="end"
+                            android:hint="모집 인원 수"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColorHint="#C4C4C4"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#C4C4C4" />
+
+                    <!-- 위치 입력 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/etPlace"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableStart="@drawable/img_location"
+                            android:drawablePadding="10dp"
+                            android:ems="10"
+                            android:textSize="15sp"
+                            android:hint="위치"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="#C4C4C4"
+                            tools:targetApi="o"
+                            android:layout_marginLeft="10dp"
+                            android:drawableLeft="@drawable/img_location" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#C4C4C4" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+
+                        <!-- 날짜 입력 -->
+                        <EditText
+                            android:id="@+id/etDateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@android:color/transparent"
+                            android:drawableStart="@drawable/img_time"
+                            android:drawablePadding="10dp"
+                            android:ems="10"
+                            android:textSize="15sp"
+                            android:hint="날짜와 시간"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:textColorHint="#C4C4C4"
+                            tools:targetApi="o"
+                            android:layout_marginLeft="10dp"
+                            android:drawableLeft="@drawable/img_time" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#C4C4C4" />
+
+                    <!-- 내용 입력 -->
+                    <EditText
+                        android:id="@+id/etContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="414dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:layout_margin="10dp"
+                        android:gravity="top"
+                        android:hint="내용을 작성해 주세요."
+                        android:textSize="15sp"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine"
+                        android:lines="8"
+                        android:maxLines="10"
+                        android:minLines="6"
+                        android:textColorHint="#C4C4C4"
+                        tools:targetApi="o"
+                        android:layout_marginLeft="10dp" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+            <ImageView
+                android:id="@+id/imgInput"
+                android:src="@drawable/img_camera_bk"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

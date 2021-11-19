@@ -2,13 +2,13 @@ package com.sharewithme.swm.declare
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
@@ -44,7 +44,7 @@ class DeclareInsideActivity : AppCompatActivity() {
     }
     private fun getImageData(key : String) {
 
-        val storageReference = Firebase.storage.reference.child(key + ".png")
+        val storageReference = Firebase.storage.reference.child("$key.png")
         val imageViewFromFB = findViewById<ImageView>(R.id.getImageArea)
 
         storageReference.downloadUrl.addOnCompleteListener { task ->
@@ -91,10 +91,10 @@ class DeclareInsideActivity : AppCompatActivity() {
                     binding.textArea.text = dataModel!!.content
 
                     val myUid = FireBaseAuth.getUid()
-                    val writerUid = dataModel.uid
+                    val writerUid = dataModel!!.uid
 
                     //Uid가 일치할때만 수정이 가능하도록
-                    if(myUid.equals(writerUid)){
+                    if(myUid == writerUid){
                         binding.declareSettingIcon.isVisible = true
                     }
                 } catch (e : Exception){

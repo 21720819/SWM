@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemView"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_postTitle"
+                        android:layout_width="275dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="1dp"
+                        android:text="깻잎 같이사요!"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_postPrice"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+
+
+                        android:text="1000원"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_postPlace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="5dp"
+                        android:text="영남 오케이마트"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:drawableStartCompat="@drawable/img_location" />
+
+                    <TextView
+                        android:id="@+id/tv_postDateTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="5dp"
+                        android:text="9월 9일 11:30"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:drawableStartCompat="@drawable/img_time" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_postedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="2021-11-10"
+                        android:textColor="#4311C6"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="|"
+                        android:layout_marginStart="10dp"
+                        android:textColor="#4311C6"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="5dp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/tv_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="하리"
+                        android:textColor="#4311C6"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_totalNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="전체 4명"
+                        android:layout_marginStart="200dp"
+
+                        android:textColor="#4311C6"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="100dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

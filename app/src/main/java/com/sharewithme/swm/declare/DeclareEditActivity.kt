@@ -3,10 +3,10 @@ package com.sharewithme.swm.declare
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.google.firebase.database.DataSnapshot
@@ -20,6 +20,7 @@ import com.sharewithme.swm.utils.FireBaseRef
 import java.io.ByteArrayOutputStream
 
 class DeclareEditActivity : AppCompatActivity() {
+
     private lateinit var binding : ActivityDeclareEditBinding
     private lateinit var key:String // key값
     private lateinit var writerUid : String // uid값
@@ -36,7 +37,7 @@ class DeclareEditActivity : AppCompatActivity() {
 
         binding.editBtn.setOnClickListener {
             editDeclareData(key)
-            if(isImageUpload == true){
+            if(isImageUpload){
                 imageUpload(key)
             }
             finish()
@@ -57,7 +58,7 @@ class DeclareEditActivity : AppCompatActivity() {
     private fun editDeclareData(key : String){
         val title = binding.titleArea.text.toString()
         val content = binding.contentArea.text.toString()
-        if(title.length > 0 && content.length > 0) {
+        if(title.isNotEmpty() && content.isNotEmpty()) {
             FireBaseRef.DeclareRef
                 .child(key)
                 .setValue(
@@ -95,7 +96,7 @@ class DeclareEditActivity : AppCompatActivity() {
 
         val storage = Firebase.storage
         val storageRef = storage.reference
-        val mountainsRef = storageRef.child(key + ".png")
+        val mountainsRef = storageRef.child("$key.png")
 
         val imageView = binding.imageArea
         imageView.isDrawingCacheEnabled = true
@@ -136,5 +137,3 @@ class DeclareEditActivity : AppCompatActivity() {
         FireBaseRef.DeclareRef.child(key).addValueEventListener(postListener) // uid안의 데이터를 쓰기때문에 child(key)라고 적는다
     }
 }
-
-
