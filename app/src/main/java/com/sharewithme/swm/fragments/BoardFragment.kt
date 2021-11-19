@@ -30,8 +30,6 @@ class BoardFragment : Fragment() {
             it.findNavController().navigate(R.id.action_boardFragment_to_declareFragment)
         }
 
-        //binding.boardTap.setOnClickListener {}
-
         binding.profileTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_boardFragment_to_profileFragment)
         }
