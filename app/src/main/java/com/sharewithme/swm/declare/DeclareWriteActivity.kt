@@ -46,6 +46,7 @@ class DeclareWriteActivity : AppCompatActivity() {
                 if(isImageUpload) {
                     imageUpload(key)
                 }
+                Toast.makeText(baseContext, "고객센터 글 작성 완료", Toast.LENGTH_SHORT).show()
                 finish()
             }
             else {
