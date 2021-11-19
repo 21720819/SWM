@@ -1,10 +1,10 @@
 package com.sharewithme.swm.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
@@ -17,15 +17,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mapView: MapView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+        savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_map, container, false)
         mapView = view.findViewById(R.id.mapView) as MapView
@@ -37,7 +31,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap?) {
         val yeoungnam = LatLng(35.836223, 128.752913)
         googleMap?.moveCamera(CameraUpdateFactory.newLatLng(yeoungnam))
-        googleMap?.moveCamera(CameraUpdateFactory.zoomTo(10f))
+        googleMap?.moveCamera(CameraUpdateFactory.zoomTo(15f))
 
         val marker = MarkerOptions()
                         .position(yeoungnam)
@@ -74,4 +68,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mapView.onDestroy()
         super.onDestroy()
     }
+
+
 }

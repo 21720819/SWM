@@ -20,11 +20,6 @@ class HomeFragment : Fragment() {
 //
 //    val bookmarkIdList = mutableListOf<String>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,43 +29,42 @@ class HomeFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
+        // 메인 버튼들
+        binding.boardMain.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_boardFragment)
+        }
 
+        binding.serviceMain.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_declareFragment)
+        }
+
+        binding.profileMain.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
+        binding.mapMain.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
+        }
+
+
+
+        //하단바
+       // binding.homeTap.setOnClickListener { }
 
         binding.declareTap.setOnClickListener {
-            Log.d("HomeFragment", "tipTap")
             it.findNavController().navigate(R.id.action_homeFragment_to_declareFragment)
         }
 
-        binding.talkTap.setOnClickListener {
-
-            it.findNavController().navigate(R.id.action_homeFragment_to_talkFragment)
-
+        binding.boardTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_boardFragment)
         }
 
-        binding.bookmarkTap.setOnClickListener {
+        binding.profileTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
 
-        binding.storeTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
-        }
-
-        binding.category1.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_declareFragment)
-        }
-
-        binding.category2.setOnClickListener {
-
-            it.findNavController().navigate(R.id.action_homeFragment_to_talkFragment)
-
-        }
-
-        binding.category3.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
-        }
-
-        binding.category4.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_storeFragment)
+        binding.mapTap.setOnClickListener{
+            it.findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
         }
 
         //rvAdapter = BookmarkRVAdapter(requireContext(), items, itemKeyList, bookmarkIdList)
