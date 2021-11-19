@@ -1,6 +1,5 @@
 package com.sharewithme.swm.declare
 
-import com.sharewithme.swm.utils.FireBaseAuth
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
@@ -19,8 +18,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.sharewithme.swm.R
-import com.sharewithme.swm.board.BoardEditActivity
 import com.sharewithme.swm.databinding.ActivityDeclareInsideBinding
+import com.sharewithme.swm.utils.FireBaseAuth
 import com.sharewithme.swm.utils.FireBaseRef
 
 class DeclareInsideActivity : AppCompatActivity() {
@@ -69,7 +68,7 @@ class DeclareInsideActivity : AppCompatActivity() {
 
         val alertDialog = mBuilder.show()
         alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
-            val intent = Intent(this, BoardEditActivity::class.java)
+            val intent = Intent(this, DeclareEditActivity::class.java)
             intent.putExtra("key", key)
             startActivity(intent)
             finish()
@@ -92,10 +91,10 @@ class DeclareInsideActivity : AppCompatActivity() {
                     binding.textArea.text = dataModel!!.content
 
                     val myUid = FireBaseAuth.getUid()
-                    val writerUid = dataModel.uid
+                    val writerUid = dataModel!!.uid
 
                     //Uid가 일치할때만 수정이 가능하도록
-                    if(myUid.equals(writerUid)){
+                    if(myUid == writerUid){
                         binding.declareSettingIcon.isVisible = true
                     }
                 } catch (e : Exception){
