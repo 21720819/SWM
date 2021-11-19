@@ -40,6 +40,7 @@ class DeclareEditActivity : AppCompatActivity() {
             if(isImageUpload){
                 imageUpload(key)
             }
+            Toast.makeText(baseContext, "수정 완료", Toast.LENGTH_SHORT).show()
             finish()
         }
         binding.imageArea.setOnClickListener {
