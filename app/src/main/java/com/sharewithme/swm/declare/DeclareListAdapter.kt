@@ -7,7 +7,6 @@ import android.widget.BaseAdapter
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.sharewithme.swm.R
-import com.sharewithme.swm.utils.FireBaseAuth
 
 
 class DeclareListAdapter(val declareList : MutableList<DeclareModel>) : BaseAdapter() {
@@ -33,11 +32,6 @@ class DeclareListAdapter(val declareList : MutableList<DeclareModel>) : BaseAdap
         val itemLinearLayoutView = view?.findViewById<LinearLayout>(R.id.itemView)
         val title = view?.findViewById<TextView>(R.id.titleArea)
         val content = view?.findViewById<TextView>(R.id.contentArea)
-
-        //자신이 쓴글이면 백그라운드 색이 바뀐다
-        /*if(declareList[position].uid.equals(FBAuth.getUid())){
-        //    itemLinearLayoutView?.setBackgroundColor(Color.parseColor("#999999"))
-        }*/
 
         title!!.text = declareList[position].title
         content!!.text = declareList[position].content

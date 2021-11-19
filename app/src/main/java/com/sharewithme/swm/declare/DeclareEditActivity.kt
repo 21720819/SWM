@@ -1,11 +1,13 @@
 package com.sharewithme.swm.declare
 
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
@@ -37,7 +39,7 @@ class DeclareEditActivity : AppCompatActivity() {
 
         binding.editBtn.setOnClickListener {
             editDeclareData(key)
-            if(isImageUpload == true){
+            if(isImageUpload){
                 imageUpload(key)
             }
             finish()
@@ -77,7 +79,7 @@ class DeclareEditActivity : AppCompatActivity() {
     }
     private fun getImageData(key : String) {
 
-        val storageReference = Firebase.storage.reference.child(key + ".png")
+        val storageReference = Firebase.storage.reference.child("$key.png")
         val imageViewFromFB = binding.imageArea
 
         storageReference.downloadUrl.addOnCompleteListener { task ->
@@ -96,7 +98,7 @@ class DeclareEditActivity : AppCompatActivity() {
 
         val storage = Firebase.storage
         val storageRef = storage.reference
-        val mountainsRef = storageRef.child(key + ".png")
+        val mountainsRef = storageRef.child("$key.png")
 
         val imageView = binding.imageArea
         imageView.isDrawingCacheEnabled = true

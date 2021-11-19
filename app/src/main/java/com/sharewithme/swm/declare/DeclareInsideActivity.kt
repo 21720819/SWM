@@ -1,14 +1,15 @@
 package com.sharewithme.swm.declare
 
+import com.sharewithme.swm.utils.FireBaseAuth
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
@@ -18,8 +19,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.sharewithme.swm.R
+import com.sharewithme.swm.board.BoardEditActivity
 import com.sharewithme.swm.databinding.ActivityDeclareInsideBinding
-import com.sharewithme.swm.utils.FireBaseAuth
 import com.sharewithme.swm.utils.FireBaseRef
 
 class DeclareInsideActivity : AppCompatActivity() {
@@ -44,7 +45,7 @@ class DeclareInsideActivity : AppCompatActivity() {
     }
     private fun getImageData(key : String) {
 
-        val storageReference = Firebase.storage.reference.child(key + ".png")
+        val storageReference = Firebase.storage.reference.child("$key.png")
         val imageViewFromFB = findViewById<ImageView>(R.id.getImageArea)
 
         storageReference.downloadUrl.addOnCompleteListener { task ->
@@ -68,7 +69,7 @@ class DeclareInsideActivity : AppCompatActivity() {
 
         val alertDialog = mBuilder.show()
         alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
-            val intent = Intent(this, DeclareEditActivity::class.java)
+            val intent = Intent(this, BoardEditActivity::class.java)
             intent.putExtra("key", key)
             startActivity(intent)
             finish()

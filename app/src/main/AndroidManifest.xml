@@ -10,7 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShareWithMe12">
         <activity
-            android:name=".declare.DeclareEditActivity"
+            android:name=".board.BoardWriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".board.BoardEditActivity"
+            android:exported="false"
+            android:label="@string/title_activity_board_edit"
+            android:theme="@style/Theme.ShareWithMe12.NoActionBar" />
+        <activity
+            android:name=".board.BoardInsideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".declare.BoardEditActivity"
             android:exported="true" />
         <activity
             android:name=".declare.DeclareInsideActivity"
