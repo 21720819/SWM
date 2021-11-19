@@ -46,9 +46,9 @@
     </fragment>
     <fragment
         android:id="@+id/storeFragment"
-        android:name="com.sharewithme.swm.fragments.StoreFragment"
+        android:name="com.sharewithme.swm.fragments.MapFragment"
         android:label="fragment_store"
-        tools:layout="@layout/fragment_store" >
+        tools:layout="@layout/fragment_map" >
         <action
             android:id="@+id/action_storeFragment_to_declareFragment"
             app:destination="@id/declareFragment" />

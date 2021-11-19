@@ -21,11 +21,17 @@
         <entry key="..\:/Users/82109/AndroidStudioProjects/ShareWithMe12/app/src/main/res/layout/fragment_store.xml" value="0.1328125" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/ShareWithMe12/app/src/main/res/layout/fragment_talk.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/ShareWithMe12/app/src/main/res/layout/fragment_tip.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/drawable/background_radius_purple.xml" value="0.22864583333333333" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/activity_main_menu.xml" value="0.38645833333333335" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_declare.xml" value="0.38645833333333335" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_profile.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/activity_declare_edit.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/activity_declare_inside.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/activity_declare_write.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/activity_main.xml" value="0.228125" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/declare_list_item.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/fragment_declare.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/fragment_home.xml" value="0.6" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/fragment_modify_profile.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/fragment_profile.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/fragment_store.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ShareWithMe/SWM/app/src/main/res/layout/fragment_talk.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/drawable/bt_bg.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/drawable/bt_onoff_bg.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/drawable/cancel_bt_bg.xml" value="0.40260416666666665" />
