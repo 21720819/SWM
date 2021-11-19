@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
             val id = et_Login_id.text.toString()
             val password = et_Login_pw.text.toString()
 
-            if(id.length > 0 && password.length > 0) {
+            if(id.isNotEmpty() && password.isNotEmpty()) {
                 auth.signInWithEmailAndPassword(id, password).addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information

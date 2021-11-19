@@ -160,9 +160,7 @@ class BoardInsideActivity  : AppCompatActivity() {
         }
 
         alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
-
-            FireBaseRef.boardRef.child(key).removeValue()
-            Toast.makeText(this, "삭제완료", Toast.LENGTH_LONG).show()
+            FireBaseRef.DeclareRef.child(key).removeValue()
             finish()
         }
     }
