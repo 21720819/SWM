@@ -107,9 +107,6 @@ class ProfileFragment : Fragment() {
             .addOnFailureListener { exception ->
                 //Log.d(TAG, "get failed with ", exception)
             }
-
-
     }
-
 
 }

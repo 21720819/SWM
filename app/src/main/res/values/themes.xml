@@ -17,10 +17,13 @@
         <item name="android:windowLightStatusBar">true</item>
         <!--<item name="android:windowLightNavigationBar">true</item>-->
     </style>
+
     <style name="Theme.ShareWithMe12.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="Theme.ShareWithMe12.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.ShareWithMe12.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

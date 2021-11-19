@@ -14,10 +14,10 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.sharewithme.swm.databinding.FragmentDeclareBinding
-import com.sharewithme.swm.declare.DeclareListAdapter
-import com.sharewithme.swm.declare.DeclareModel
 import com.sharewithme.swm.R
 import com.sharewithme.swm.declare.DeclareInsideActivity
+import com.sharewithme.swm.declare.DeclareListAdapter
+import com.sharewithme.swm.declare.DeclareModel
 import com.sharewithme.swm.declare.DeclareWriteActivity
 import com.sharewithme.swm.utils.FireBaseRef
 
@@ -31,11 +31,6 @@ class DeclareFragment : Fragment() {
 
     // 어댑터 이름
     private lateinit var declareRVAdapter : DeclareListAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

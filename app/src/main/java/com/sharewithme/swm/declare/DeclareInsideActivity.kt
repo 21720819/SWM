@@ -2,13 +2,14 @@ package com.sharewithme.swm.declare
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
@@ -18,6 +19,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.sharewithme.swm.R
+import com.sharewithme.swm.board.BoardEditActivity
 import com.sharewithme.swm.databinding.ActivityDeclareInsideBinding
 import com.sharewithme.swm.utils.FireBaseAuth
 import com.sharewithme.swm.utils.FireBaseRef
@@ -44,7 +46,7 @@ class DeclareInsideActivity : AppCompatActivity() {
     }
     private fun getImageData(key : String) {
 
-        val storageReference = Firebase.storage.reference.child(key + ".png")
+        val storageReference = Firebase.storage.reference.child("$key.png")
         val imageViewFromFB = findViewById<ImageView>(R.id.getImageArea)
 
         storageReference.downloadUrl.addOnCompleteListener { task ->
@@ -64,21 +66,26 @@ class DeclareInsideActivity : AppCompatActivity() {
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
         val mBuilder = AlertDialog.Builder(this)
             .setView(mDialogView)
-            .setTitle("고객센터글 수정 / 삭제")
+            .setTitle("고객센터 글 수정/삭제")
 
         val alertDialog = mBuilder.show()
         alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
+            Toast.makeText(this, "수정 버튼을 눌렀습니다", Toast.LENGTH_LONG).show()
+
             val intent = Intent(this, DeclareEditActivity::class.java)
-            intent.putExtra("key", key)
+            intent.putExtra("key",key)
             startActivity(intent)
             finish()
         }
+
         alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
+
             FireBaseRef.DeclareRef.child(key).removeValue()
+            Toast.makeText(this, "삭제완료", Toast.LENGTH_LONG).show()
             finish()
         }
-
     }
+
 
     private fun getDeclareData(key : String){
         val postListener = object : ValueEventListener {
@@ -91,10 +98,10 @@ class DeclareInsideActivity : AppCompatActivity() {
                     binding.textArea.text = dataModel!!.content
 
                     val myUid = FireBaseAuth.getUid()
-                    val writerUid = dataModel.uid
+                    val writerUid = dataModel!!.uid
 
                     //Uid가 일치할때만 수정이 가능하도록
-                    if(myUid.equals(writerUid)){
+                    if(myUid == writerUid){
                         binding.declareSettingIcon.isVisible = true
                     }
                 } catch (e : Exception){

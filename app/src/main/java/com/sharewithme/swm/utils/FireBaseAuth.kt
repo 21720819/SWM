@@ -10,20 +10,18 @@ class FireBaseAuth {
 
         private lateinit var auth: FirebaseAuth
 
-        fun getUid() : String {
+        fun getUid(): String {
 
             auth = FirebaseAuth.getInstance()
-
             return auth.currentUser?.uid.toString()
-
         }
 
-        fun getTime() : String {
+        fun getTime(): String {
 
             val currentDateTime = Calendar.getInstance().time
-            val dateFormat = SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
+            return SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
 
-            return dateFormat
         }
+
     }
 }
