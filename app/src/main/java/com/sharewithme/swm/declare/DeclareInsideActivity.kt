@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -18,6 +19,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.sharewithme.swm.R
+import com.sharewithme.swm.board.BoardEditActivity
 import com.sharewithme.swm.databinding.ActivityDeclareInsideBinding
 import com.sharewithme.swm.utils.FireBaseAuth
 import com.sharewithme.swm.utils.FireBaseRef
@@ -64,21 +66,26 @@ class DeclareInsideActivity : AppCompatActivity() {
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
         val mBuilder = AlertDialog.Builder(this)
             .setView(mDialogView)
-            .setTitle("고객센터글 수정 / 삭제")
+            .setTitle("고객센터 글 수정/삭제")
 
         val alertDialog = mBuilder.show()
         alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
+            Toast.makeText(this, "수정 버튼을 눌렀습니다", Toast.LENGTH_LONG).show()
+
             val intent = Intent(this, DeclareEditActivity::class.java)
-            intent.putExtra("key", key)
+            intent.putExtra("key",key)
             startActivity(intent)
             finish()
         }
+
         alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
+
             FireBaseRef.DeclareRef.child(key).removeValue()
+            Toast.makeText(this, "삭제완료", Toast.LENGTH_LONG).show()
             finish()
         }
-
     }
+
 
     private fun getDeclareData(key : String){
         val postListener = object : ValueEventListener {

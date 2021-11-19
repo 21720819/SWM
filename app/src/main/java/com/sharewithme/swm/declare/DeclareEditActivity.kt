@@ -77,7 +77,7 @@ class DeclareEditActivity : AppCompatActivity() {
     }
     private fun getImageData(key : String) {
 
-        val storageReference = Firebase.storage.reference.child(key + ".png")
+        val storageReference = Firebase.storage.reference.child("$key.png")
         val imageViewFromFB = binding.imageArea
 
         storageReference.downloadUrl.addOnCompleteListener { task ->
