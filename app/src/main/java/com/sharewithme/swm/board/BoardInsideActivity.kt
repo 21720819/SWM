@@ -43,6 +43,11 @@ class BoardInsideActivity  : AppCompatActivity() {
     private lateinit var commentAdapter : CommentAdapter
     var nickname : String = ""
 
+    val user = Firebase.auth.currentUser
+    val db = Firebase.firestore
+    val docRef = db.collection("users").document(user!!.email.toString())
+    var preCntDone:String=""
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -62,6 +67,15 @@ class BoardInsideActivity  : AppCompatActivity() {
             .addOnSuccessListener { document  ->
                 if (document != null)  {
                     nickname = "${document["nickname"]}"
+
+                }
+            }
+
+
+        docRef.get()
+            .addOnSuccessListener { document  ->
+                if (document != null)  {
+                    preCntDone = "${document["cntDone"]}"
 
                 }
             }
@@ -161,6 +175,10 @@ class BoardInsideActivity  : AppCompatActivity() {
 
         alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
             FireBaseRef.boardRef.child(key).removeValue()
+
+            docRef
+                .update("cntDone", preCntDone.toInt()-1)
+
             Toast.makeText(this, "삭제완료", Toast.LENGTH_LONG).show()
             finish()
         }

@@ -18,6 +18,7 @@ import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
 
 // 메인화면
 class MainActivity : AppCompatActivity() {

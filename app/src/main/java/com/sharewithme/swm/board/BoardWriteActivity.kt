@@ -25,6 +25,10 @@ class BoardWriteActivity : AppCompatActivity() {
 
     private var isImageUpload = false
 
+    val user = Firebase.auth.currentUser
+    val db = Firebase.firestore
+    val docRef = db.collection("users").document(user!!.email.toString())
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -32,11 +36,8 @@ class BoardWriteActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val user = Firebase.auth.currentUser
-        val db = Firebase.firestore
         var nickname : String = ""
 
-        val docRef = db.collection("users").document(user!!.email.toString())
         docRef.get()
             .addOnSuccessListener { document  ->
                 if (document != null)  {
@@ -44,6 +45,19 @@ class BoardWriteActivity : AppCompatActivity() {
 
                 }
             }
+<<<<<<< HEAD
+=======
+        var preCntDone:String=""
+        docRef.get()
+            .addOnSuccessListener { document  ->
+                if (document != null)  {
+                    preCntDone = "${document["cntDone"]}"
+
+                }
+            }
+
+
+>>>>>>> a1386580137a6c53d2d084bf7640f521e4503e0e
         binding.imgBtnCompleted.setOnClickListener {
 
             val title = binding.etTitle.text.toString()
@@ -55,11 +69,35 @@ class BoardWriteActivity : AppCompatActivity() {
             val uid = FireBaseAuth.getUid()
             val time = FireBaseAuth.getTime()
 
+
+
             if(title.isEmpty() || content.isEmpty() ||  totalNum.isEmpty() || price.isEmpty()) {
                 Toast.makeText(applicationContext,"제목, 내용, 모집 인원 수, 가격은 필수로 입력하셔야 합니다.", Toast.LENGTH_LONG).show();
             }
 
             else{
+//여기서 글 수 +1
+                docRef
+                    .update("cntDone", preCntDone.toInt()+1)
+
+                if (preCntDone.toInt()+1 != null) {
+                    when(preCntDone.toInt()+1) {
+
+                        0, 1 -> { docRef
+                            .update("level", 0)
+                        }
+
+                        in 2..5 -> { docRef
+                            .update("level", 1) }
+                        in 6..10 -> { docRef
+                            .update("level", 2) }
+
+                        !in 0..10 -> { docRef
+                            .update("level", 3) }
+
+                    }
+
+                }
 
                 if(datetime.isEmpty()) {
                     datetime = "무관"
