@@ -30,7 +30,7 @@ class DeclareFragment : Fragment() {
     private val declareKeyList = mutableListOf<String>()
 
     // 어댑터 이름
-    private lateinit var declareRVAdapter : DeclareListAdapter
+    private lateinit var declareAdapter : DeclareListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,20 +38,14 @@ class DeclareFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_declare, container, false)
-
-
-        declareRVAdapter = DeclareListAdapter(declareDataList)
-        binding.declareListView.adapter = declareRVAdapter
-
-
-
+        declareAdapter = DeclareListAdapter(declareDataList)
+        binding.declareListView.adapter = declareAdapter
         binding.declareListView.setOnItemClickListener { parent, view, position, id ->
 
-            // 두번째 방법으로는 Firebase에 있는 board에 대한 데이터의 id를 기반으로 다시 데이터를 받아오는 방법 (이것으로 해야 정확!)
+            // Firebase에 있는 board에 대한 데이터의 id를 기반으로 다시 데이터를 받아오는 방법
             val intent = Intent(context, DeclareInsideActivity::class.java)
             intent.putExtra("key", declareKeyList[position])
             startActivity(intent)
-
         }
 
         // 고객센터 게시판 글쓰기 화면
@@ -59,14 +53,10 @@ class DeclareFragment : Fragment() {
             val intent = Intent(context, DeclareWriteActivity::class.java)
             startActivity(intent)
         }
-
          binding.homeTap.setOnClickListener {
              it.findNavController().navigate(R.id.action_declareFragment_to_homeFragment)
          }
-
         //하단바
-       // binding.declareTap.setOnClickListener {}
-
         binding.boardTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_declareFragment_to_boardFragment)
         }
@@ -80,7 +70,6 @@ class DeclareFragment : Fragment() {
         }
 
         getFBDeclareData()
-
         return binding.root
     }
 
@@ -93,32 +82,21 @@ class DeclareFragment : Fragment() {
 
                 for (dataModel in dataSnapshot.children) {
 
-//                    Log.d(TAG, dataModel.toString())
-//                    dataModel.key
-
                     val item = dataModel.getValue(DeclareModel::class.java)
                     declareDataList.add(item!!)
                     declareKeyList.add(dataModel.key.toString()) // key을 넣는 부분
-
                 }
-
                 // 최신글이 위로 오도록
                 declareKeyList.reverse()
                 declareDataList.reverse()
                 // 어댑터 동기화 시키는 곳
-                declareRVAdapter.notifyDataSetChanged()
-
-
+                declareAdapter.notifyDataSetChanged()
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
             }
         }
         FireBaseRef.DeclareRef.addValueEventListener(postListener)
-
     }
-
-
 }

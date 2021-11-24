@@ -68,6 +68,4 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mapView.onDestroy()
         super.onDestroy()
     }
-
-
 }

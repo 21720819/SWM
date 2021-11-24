@@ -55,7 +55,6 @@ class SchoolSelect : AppCompatActivity() {
             }
 
         }
-
         /*
         when(sp_SchoolSearch.selectedItem.toString()) {
             "경북대학교" -> emails = arrayOf("경대")

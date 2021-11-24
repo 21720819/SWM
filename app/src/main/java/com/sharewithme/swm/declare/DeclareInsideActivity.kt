@@ -34,11 +34,9 @@ class DeclareInsideActivity : AppCompatActivity() {
         setContentView(R.layout.activity_declare_inside)
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_declare_inside)
-
         binding.declareSettingIcon.setOnClickListener{
             showDialog()
         }
-
         // key값(=UID)을 받아와서 각각의 데이터를 가져오는 방법이다
         key = intent.getStringExtra("key").toString()
         getDeclareData(key)
@@ -55,10 +53,6 @@ class DeclareInsideActivity : AppCompatActivity() {
                     .load(task.result)
                     .into(imageViewFromFB)
             }
-            else{
-
-            }
-
         }
     }
     private fun showDialog(){
@@ -70,8 +64,7 @@ class DeclareInsideActivity : AppCompatActivity() {
 
         val alertDialog = mBuilder.show()
         alertDialog.findViewById<Button>(R.id.editBtn)?.setOnClickListener {
-            Toast.makeText(this, "수정 버튼을 눌렀습니다", Toast.LENGTH_LONG).show()
-
+            Toast.makeText(this, "수정하기", Toast.LENGTH_LONG).show()
             val intent = Intent(this, DeclareEditActivity::class.java)
             intent.putExtra("key",key)
             startActivity(intent)
@@ -79,7 +72,6 @@ class DeclareInsideActivity : AppCompatActivity() {
         }
 
         alertDialog.findViewById<Button>(R.id.removeBtn)?.setOnClickListener {
-
             FireBaseRef.DeclareRef.child(key).removeValue()
             Toast.makeText(this, "삭제완료", Toast.LENGTH_LONG).show()
             finish()
@@ -93,19 +85,18 @@ class DeclareInsideActivity : AppCompatActivity() {
 
                 try{
                     val dataModel = dataSnapshot.getValue(DeclareModel::class.java)
-
                     binding.titleArea.text = dataModel!!.title
                     binding.textArea.text = dataModel!!.content
 
                     val myUid = FireBaseAuth.getUid()
-                    val writerUid = dataModel!!.uid
+                    val writerUid = dataModel.uid
 
                     //Uid가 일치할때만 수정이 가능하도록
-                    if(myUid == writerUid){
+                    if(myUid.equals(writerUid)){
                         binding.declareSettingIcon.isVisible = true
                     }
                 } catch (e : Exception){
-                    Log.d(TAG, "삭제완료")
+
                 }
 
             }
