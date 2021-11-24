@@ -6,4 +6,4 @@ class UserInfo (
     var signUpDate: String? = null,
     var level: Int? = 0,
     var cntDone: Int? = 0,
-    var latestDate: String? = "거래안함")
+    var latestDate: String? = "접속안함")
