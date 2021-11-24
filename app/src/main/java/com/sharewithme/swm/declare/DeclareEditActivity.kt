@@ -16,14 +16,14 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.sharewithme.swm.R
 import com.sharewithme.swm.databinding.ActivityDeclareEditBinding
+import com.sharewithme.swm.utils.FireBaseAuth
 import com.sharewithme.swm.utils.FireBaseRef
 import java.io.ByteArrayOutputStream
 
 class DeclareEditActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityDeclareEditBinding
-    private lateinit var key:String // key값
-    private lateinit var writerUid : String // uid값
+    private lateinit var key : String // key값
     private var isImageUpload = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,20 +60,20 @@ class DeclareEditActivity : AppCompatActivity() {
         val title = binding.titleArea.text.toString()
         val content = binding.contentArea.text.toString()
         if(title.isNotEmpty() && content.isNotEmpty()) {
+
             FireBaseRef.DeclareRef
                 .child(key)
                 .setValue(
                     DeclareModel(
                         binding.titleArea.text.toString(),
                         binding.contentArea.text.toString(),
-                        writerUid
+                        FireBaseAuth.getUid()
                     )
                 )
-
             finish()
         }
         else {
-            Toast.makeText(baseContext, "내용 입력을 완료해주세요.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(baseContext, "제목 또는 내용 입력을 완료해주세요.", Toast.LENGTH_SHORT).show()
         }
     }
     private fun getImageData(key : String) {
@@ -120,13 +120,11 @@ class DeclareEditActivity : AppCompatActivity() {
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-
                 val dataModel = dataSnapshot.getValue(DeclareModel::class.java)
 
                 // editText이기 때문에 setText로 해야한다
                 binding.titleArea.setText(dataModel?.title)
                 binding.contentArea.setText(dataModel?.content)
-                writerUid = dataModel!!.uid
 
             }
 

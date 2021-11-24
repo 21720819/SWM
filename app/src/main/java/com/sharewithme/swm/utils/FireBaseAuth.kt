@@ -11,13 +11,11 @@ class FireBaseAuth {
         private lateinit var auth: FirebaseAuth
 
         fun getUid(): String {
-
             auth = FirebaseAuth.getInstance()
             return auth.currentUser?.uid.toString()
         }
 
         fun getTime(): String {
-
             val currentDateTime = Calendar.getInstance().time
             return SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA).format(currentDateTime)
 

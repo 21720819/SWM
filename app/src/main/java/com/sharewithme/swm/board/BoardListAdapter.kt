@@ -18,26 +18,19 @@ class BoardListAdapter(private val boardList : MutableList<BoardModel>) : BaseAd
     override fun getCount(): Int {
         return boardList.size
     }
-
     override fun getItem(position: Int): Any {
         return boardList[position]
     }
-
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
-
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-
         var view = convertView
-
         if (view == null) {
             view = LayoutInflater.from(parent?.context).inflate(R.layout.board_list_item, parent, false)
         }
-
         val itemLinearLayoutView = view?.findViewById<LinearLayout>(R.id.itemView)
         val title = view?.findViewById<TextView>(R.id.tv_postTitle)
         val price = view?.findViewById<TextView>(R.id.tv_postPrice)

@@ -8,13 +8,8 @@ class FireBaseRef {
     companion object {
 
         private val database = Firebase.database
-
         val boardRef = database.getReference("board")
-
         val commentRef = database.getReference("comment")
-
         val DeclareRef = database.getReference("declare")
-
     }
-
 }

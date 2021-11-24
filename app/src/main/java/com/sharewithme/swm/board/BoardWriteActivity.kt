@@ -44,8 +44,6 @@ class BoardWriteActivity : AppCompatActivity() {
 
                 }
             }
-
-
         binding.imgBtnCompleted.setOnClickListener {
 
             val title = binding.etTitle.text.toString()
