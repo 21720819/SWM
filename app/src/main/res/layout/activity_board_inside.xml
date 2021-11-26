@@ -25,12 +25,13 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="7dp"
                         android:src="@drawable/img_logo" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="105dp"
+                        android:layout_marginLeft="112dp"
                         android:layout_marginTop="15dp"
                         android:gravity="center"
                         android:text="게시판"
@@ -44,7 +45,7 @@
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="115dp"
+                        android:layout_marginLeft="132dp"
                         android:src="@drawable/main_menu"
                         android:visibility="invisible" />
 
