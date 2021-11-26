@@ -42,7 +42,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="150dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -51,17 +51,17 @@
 
                     <ImageView
                         android:id="@+id/serviceMain"
-                        android:src="@drawable/img_service_bold_512"
+                        android:src="@drawable/img_declare_p_bold_512"
                         android:layout_weight="1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"/>
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"/>
 
                     <ImageView
                         android:id="@+id/boardMain"
                         android:src="@drawable/img_list_bold_512"
                         android:layout_weight="1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"/>
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"/>
 
                 </LinearLayout>
 
@@ -71,14 +71,14 @@
 
                     <TextView
                         android:text="고객센터"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_weight="1"/>
 
                     <TextView
                         android:text="게시판"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_weight="1"/>
@@ -95,15 +95,15 @@
                         android:id="@+id/profileMain"
                         android:src="@drawable/img_profile_bold_512"
                         android:layout_weight="1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"/>
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"/>
 
                     <ImageView
                         android:id="@+id/mapMain"
-                        android:src="@drawable/img_map_bold_512"
+                        android:src="@drawable/img_map_light_512"
                         android:layout_weight="1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"/>
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"/>
 
 
                 </LinearLayout>
@@ -114,14 +114,14 @@
 
                     <TextView
                         android:text="프로필"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_weight="1"/>
 
                     <TextView
                         android:text="지도"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_weight="1"/>
@@ -189,7 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/img_service_bold_512" />
+                android:src="@drawable/img_declare_p_bold_512" />
 
             <ImageView
                 android:id="@+id/boardTap"

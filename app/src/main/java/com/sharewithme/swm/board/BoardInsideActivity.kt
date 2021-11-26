@@ -177,7 +177,7 @@ class BoardInsideActivity  : AppCompatActivity() {
             docRef
                 .update("cntDone", preCntDone.toInt()-1)
 
-            Toast.makeText(this, "삭제완료", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "글 삭제완료", Toast.LENGTH_LONG).show()
             finish()
         }
     }

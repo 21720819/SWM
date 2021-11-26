@@ -16,9 +16,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
 
-//    private val TAG = HomeFragment::class.java.simpleName
-//
-//    val bookmarkIdList = mutableListOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,9 +45,6 @@ class HomeFragment : Fragment() {
 
 
 
-        //하단바
-       // binding.homeTap.setOnClickListener { }
-
         binding.declareTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_declareFragment)
         }
@@ -67,39 +61,9 @@ class HomeFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
         }
 
-        //rvAdapter = BookmarkRVAdapter(requireContext(), items, itemKeyList, bookmarkIdList)
-
-        //getCategoryData()
 
         return binding.root
     }
-
-    /*  private fun getCategoryData(){
-
-          val postListener = object : ValueEventListener {
-              override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                  for (dataModel in dataSnapshot.children) {
-
-                      val item = dataModel.getValue(ContentModel::class.java)
-
-                      items.add(item!!)
-                      itemKeyList.add(dataModel.key.toString())
-
-
-                  }
-                  rvAdapter.notifyDataSetChanged()
-
-              }
-
-              override fun onCancelled(databaseError: DatabaseError) {
-                  // Getting Post failed, log a message
-                  Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
-              }
-          }*/
-    //FBRef.category1.addValueEventListener(postListener)
-    //FBRef.category2.addValueEventListener(postListener)
-
 
 
 }

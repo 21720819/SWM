@@ -130,7 +130,7 @@ class BoardEditActivity : AppCompatActivity() {
                     FireBaseAuth.getUid()
                 )
             )
-        Toast.makeText(this, "수정완료", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "글 수정 완료", Toast.LENGTH_LONG).show()
 
         finish()
     }
