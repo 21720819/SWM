@@ -45,8 +45,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
                 }
             }
-<<<<<<< HEAD
-=======
+
         var preCntDone:String=""
         docRef.get()
             .addOnSuccessListener { document  ->
@@ -57,7 +56,6 @@ class BoardWriteActivity : AppCompatActivity() {
             }
 
 
->>>>>>> a1386580137a6c53d2d084bf7640f521e4503e0e
         binding.imgBtnCompleted.setOnClickListener {
 
             val title = binding.etTitle.text.toString()

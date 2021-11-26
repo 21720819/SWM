@@ -1,7 +1,6 @@
 package com.sharewithme.swm.fragments
 
 import com.sharewithme.swm.board.BoardInsideActivity
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
