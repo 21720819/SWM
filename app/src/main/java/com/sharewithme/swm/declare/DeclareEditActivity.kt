@@ -40,7 +40,7 @@ class DeclareEditActivity : AppCompatActivity() {
             if(isImageUpload){
                 imageUpload(key)
             }
-            Toast.makeText(baseContext, "수정 완료", Toast.LENGTH_SHORT).show()
+            Toast.makeText(baseContext, "글 수정 완료", Toast.LENGTH_SHORT).show()
             finish()
         }
         binding.imageArea.setOnClickListener {
@@ -73,7 +73,7 @@ class DeclareEditActivity : AppCompatActivity() {
             finish()
         }
         else {
-            Toast.makeText(baseContext, "제목 또는 내용 입력을 완료해주세요.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(baseContext, "제목, 내용은 필수로 입력하셔야 합니다.", Toast.LENGTH_SHORT).show()
         }
     }
     private fun getImageData(key : String) {

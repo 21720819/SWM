@@ -44,11 +44,11 @@ class DeclareWriteActivity : AppCompatActivity() {
                 if(isImageUpload) {
                     imageUpload(key)
                 }
-                Toast.makeText(baseContext, "작성 완료", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "글 작성 완료", Toast.LENGTH_SHORT).show()
                 finish()
             }
             else {
-                Toast.makeText(baseContext, "내용 또는 제목 입력을 완료해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "제목, 내용은 필수로 입력하셔야 합니다.", Toast.LENGTH_SHORT).show()
             }
         }
         binding.imageArea.setOnClickListener {

@@ -1,19 +1,16 @@
 package com.sharewithme.swm
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main_menu.*
 import java.text.SimpleDateFormat
 
 class MainMenu : AppCompatActivity() {
-    val user = Firebase.auth.currentUser
-    val db = Firebase.firestore
-    val docRef = db.collection("users").document(user!!.email.toString())
+    private val user = Firebase.auth.currentUser
+    private val db = Firebase.firestore
+    private val docRef = db.collection("users").document(user!!.email.toString())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

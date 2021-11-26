@@ -111,7 +111,7 @@ class BoardWriteActivity : AppCompatActivity() {
                     .child(key)
                     .setValue(BoardModel(title,content,datetime,place,nickname,time,totalNum,price,uid))
 
-                Toast.makeText(this, "게시글 입력 완료", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "글 작성 완료", Toast.LENGTH_LONG).show()
 
                 if(isImageUpload) {
                     imageUpload(key)
