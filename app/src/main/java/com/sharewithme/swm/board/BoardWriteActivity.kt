@@ -42,16 +42,13 @@ class BoardWriteActivity : AppCompatActivity() {
             .addOnSuccessListener { document  ->
                 if (document != null)  {
                     nickname = "${document["nickname"]}"
-
                 }
             }
-
         var preCntDone:String=""
         docRef.get()
             .addOnSuccessListener { document  ->
                 if (document != null)  {
                     preCntDone = "${document["cntDone"]}"
-
                 }
             }
 
@@ -84,17 +81,14 @@ class BoardWriteActivity : AppCompatActivity() {
                         0, 1 -> { docRef
                             .update("level", 0)
                         }
-
                         in 2..5 -> { docRef
                             .update("level", 1) }
                         in 6..10 -> { docRef
                             .update("level", 2) }
-
                         !in 0..10 -> { docRef
                             .update("level", 3) }
 
                     }
-
                 }
 
                 if(datetime.isEmpty()) {
@@ -104,7 +98,6 @@ class BoardWriteActivity : AppCompatActivity() {
                 if(place.isEmpty()) {
                     place = "무관"
                 }
-
                 val key = FireBaseRef.boardRef.push().key.toString()
 
                 FireBaseRef.boardRef

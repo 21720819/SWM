@@ -152,11 +152,9 @@ class BoardInsideActivity  : AppCompatActivity() {
             }
         }
         FireBaseRef.commentRef.child(key).addValueEventListener(postListener)
-
-
     }
 
-    private fun showDialog(){
+    private fun showDialog() {
 
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
         val mBuilder = AlertDialog.Builder(this)
