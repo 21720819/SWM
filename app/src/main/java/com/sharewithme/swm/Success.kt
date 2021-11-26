@@ -14,17 +14,7 @@ class Success : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_success)
 
-        //var name:String = ""
-        //var nick:String = ""
         var email:String = ""
-
-        /*
-        if(intent.hasExtra("name") && intent.hasExtra("nick")) {
-            name = intent.getStringExtra("name").toString()
-            nick = intent.getStringExtra("nick").toString()
-            email = intent.getStringExtra("email").toString()
-        }
-        */
 
         if(intent.hasExtra("email")) {
             email = intent.getStringExtra("email").toString()
@@ -44,8 +34,6 @@ class Success : AppCompatActivity() {
         // 다음 버튼
         btn_Success.setOnClickListener { // 버튼 클릭시 할 행동
             val intent = Intent(this, MainActivity::class.java) // 인텐트를 생성
-            //intent.putExtra("name", name)
-            //intent.putExtra("nick", nick)
             intent.putExtra("email", email)
             startActivity(intent) // 화면 전환하기
             finishAffinity()
