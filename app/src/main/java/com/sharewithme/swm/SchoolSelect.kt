@@ -55,20 +55,6 @@ class SchoolSelect : AppCompatActivity() {
             }
 
         }
-        /*
-        when(sp_SchoolSearch.selectedItem.toString()) {
-            "경북대학교" -> emails = arrayOf("경대")
-            "계명대학교" -> emails = arrayOf("계대")
-            "대구가톨릭대학교" -> emails = arrayOf("대가대")
-            "대구대학교" -> emails = arrayOf("대구대")
-            "영남대학교" -> emails = arrayOf("ynu.ac.kr","yu.ac.kr")
-        }
-
-        val emailAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, emails)
-        sp_SchoolSearch_email.adapter = emailAdapter
-
-        sp_SchoolSearch_email.prompt = "학교 이메일을 선택하세요"
-        */
 
         et_SchoolSelect_email.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
