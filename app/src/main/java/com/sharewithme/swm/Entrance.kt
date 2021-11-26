@@ -11,8 +11,6 @@ class Entrance : AppCompatActivity() {
         setContentView(R.layout.activity_entrance)
 
         Handler().postDelayed({
-            // This method will be executed once the timer is over
-            // Start your app main activity
 
             startActivity(Intent(this, MainActivity::class.java))
 

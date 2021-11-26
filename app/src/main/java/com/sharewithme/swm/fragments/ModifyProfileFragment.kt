@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.fragment_modify_profile.*
 
 class ModifyProfileFragment : Fragment() {
     private lateinit var binding: FragmentModifyProfileBinding
-    private var isImageUpload = false
 
     private var auth: FirebaseAuth? = null
     val user = Firebase.auth.currentUser

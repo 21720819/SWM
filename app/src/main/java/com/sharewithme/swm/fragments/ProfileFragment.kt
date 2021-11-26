@@ -26,7 +26,6 @@ class ProfileFragment : Fragment() {
     private lateinit var editor: SharedPreferences.Editor
 
 
-  //  private val TAG = ProfileFragment::class.java.simpleName
     private var auth: FirebaseAuth? = null
 
     override fun onCreateView(
@@ -105,7 +104,6 @@ class ProfileFragment : Fragment() {
                 }
             }
             .addOnFailureListener { exception ->
-                //Log.d(TAG, "get failed with ", exception)
             }
     }
 
