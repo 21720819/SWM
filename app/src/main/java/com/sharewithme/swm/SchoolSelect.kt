@@ -37,10 +37,10 @@ class SchoolSelect : AppCompatActivity() {
 
                 //tv_SchoolSearch_subtitle.text = selectedSchool
                 when(selectedSchool) {
-                    "경북대학교" -> emails = arrayOf("경대")
-                    "계명대학교" -> emails = arrayOf("계대")
-                    "대구가톨릭대학교" -> emails = arrayOf("대가대")
-                    "대구대학교" -> emails = arrayOf("대구대")
+                    "경북대학교" -> emails = arrayOf("knu.ac.kr")
+                    "계명대학교" -> emails = arrayOf("kmu.ac.kr")
+                    "대구가톨릭대학교" -> emails = arrayOf("cu.ac.kr")
+                    "대구대학교" -> emails = arrayOf("daegu.ac.kr")
                     "영남대학교" -> emails = arrayOf("ynu.ac.kr","yu.ac.kr")
                 }
 
