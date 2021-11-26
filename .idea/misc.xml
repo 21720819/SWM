@@ -25,8 +25,6 @@
         <entry key="..\:/Users/82109/AndroidStudioProjects/ShareWithMe12/app/src/main/res/layout/fragment_tip.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_declare.xml" value="0.39791666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_map.xml" value="0.39791666666666664" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_board.xml" value="0.38645833333333335" />
-        <entry key="..\:/Users/ddoli/AndroidStudioProjects/SWM/SWM/app/src/main/res/layout/fragment_home.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/drawable/bt_bg.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/drawable/bt_onoff_bg.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/drawable/cancel_bt_bg.xml" value="0.40260416666666665" />
@@ -47,7 +45,7 @@
         <entry key="..\:/Users/ddoli/AndroidStudioProjects/ShareWithMe12/app/src/main/res/layout/fragment_tip.xml" value="0.38645833333333335" />
         <entry key="..\:/swm1/SWM/app/src/main/res/drawable/edge.xml" value="0.14635416666666667" />
         <entry key="..\:/swm1/SWM/app/src/main/res/layout/activity_board_edit.xml" value="0.13020833333333334" />
-        <entry key="..\:/swm1/SWM/app/src/main/res/layout/activity_board_inside.xml" value="0.4" />
+        <entry key="..\:/swm1/SWM/app/src/main/res/layout/activity_board_inside.xml" value="0.18623124448367168" />
         <entry key="..\:/swm1/SWM/app/src/main/res/layout/activity_board_write.xml" value="0.11510416666666666" />
         <entry key="..\:/swm1/SWM/app/src/main/res/layout/activity_declare_edit.xml" value="0.25364583333333335" />
         <entry key="..\:/swm1/SWM/app/src/main/res/layout/activity_declare_inside.xml" value="0.25364583333333335" />
