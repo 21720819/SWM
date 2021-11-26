@@ -33,8 +33,7 @@ class Info : AppCompatActivity() {
 
         auth = Firebase.auth
         val db = Firebase.firestore
-        //var nameLength:Int?
-        //var nickLength:Int?
+
         var pw:String = ""
         var pwCheck:String = ""
         var isNameFilled:Boolean = false
@@ -96,14 +95,8 @@ class Info : AppCompatActivity() {
                     for (document in result) {
                         //Log.d(TAG, "${document.id} => ${document.data}")
                         nicks.add("${document["nickname"]}")
-                        //tv_Info_title.text = "${nicks}"
-                        //if(nick.equals("${document["nickname"]}")) {
-                        //    tv_Info_nickDblCheck.text = " 사용할 수 없는 닉네임이에요"
-                        //  tv_Info_nickDblCheck.setTextColor(Color.RED)
-                        //}
+
                     }
-                    //tv_Info_nickDblCheck.text = nicks.size.toString()
-                    //tv_Info_subtitle.text = "${nicks}"
 
                     for(i in 1..nicks.size) {
                         if(i != nicks.size) {
@@ -157,8 +150,6 @@ class Info : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 pw = et_Info_pw.text.toString()
                 pwCheck = et_Info_pwCheck.text.toString()
-                //nameLength = et_Info_name.length()
-                //nickLength = et_Info_nick.length()
 
                 if(pwCheck.length > 0 && pw.length > 0 && pwCheck.equals(pw)) {
                     isPwSame = true
@@ -193,11 +184,6 @@ class Info : AppCompatActivity() {
                 pwCheck = et_Info_pwCheck.text.toString()
 
                 if (pwCheck.length > 0 && pw.length > 0 && pwCheck.equals(pw)) {
-                    /*
-                    if(nameLength!! > 0 && nickLength!! > 0) {
-                        btn_Info_next.visibility = View.VISIBLE
-                    }
-                    */
                     isPwSame = true
 
                     tv_Info_pwDblCheck.text = " 비밀번호가 일치합니다."
@@ -214,18 +200,6 @@ class Info : AppCompatActivity() {
                     tv_Info_pwDblCheck.text = " 비밀번호가 일치하지 않습니다."
                     tv_Info_pwDblCheck.setTextColor(Color.RED)
                 }
-                /*
-                if (editTextTextPassword3.text.toString() != "") {
-                    ButtonEnable++
-                    if(ButtonEnable == 4) {
-                        button6.setEnabled(true)
-                    }
-                }
-                else if (editTextTextPassword3.text.toString() == "") {
-                    ButtonEnable--
-                    button6.setEnabled(false)
-                }
-                */
             }
 
         })
@@ -252,11 +226,7 @@ class Info : AppCompatActivity() {
                         val user = auth.currentUser
                         //Toast.makeText(baseContext, "회원가입 성공", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, Success::class.java) // 인텐트를 생성
-                        //if(name.length > 0 && nick.length > 0) {
-                        //    intent.putExtra("name", name)
-                        //    intent.putExtra("nick", nick)
-                        //    intent.putExtra("email", email)
-                        //}
+
                         intent.putExtra("email", email)
                         startActivity(intent) // 화면 전환하기
                         //finish()
