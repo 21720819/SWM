@@ -178,7 +178,23 @@ class BoardInsideActivity  : AppCompatActivity() {
 
             docRef
                 .update("cntDone", preCntDone.toInt()-1)
+            if (preCntDone.toInt()-1 != null) {
+                when(preCntDone.toInt()-1) {
 
+                    0, 1 -> { docRef
+                        .update("level", 0)
+                    }
+                    in 2..5 -> { docRef
+                        .update("level", 1) }
+                    in 6..10 -> { docRef
+                        .update("level", 2) }
+
+                    !in 0..10 -> { docRef
+                        .update("level", 3) }
+
+                }
+
+            }
             Toast.makeText(this, "글 삭제완료", Toast.LENGTH_LONG).show()
             finish()
         }
