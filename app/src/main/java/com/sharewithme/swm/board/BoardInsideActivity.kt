@@ -42,7 +42,6 @@ class BoardInsideActivity  : AppCompatActivity() {
 
     private lateinit var commentAdapter : CommentAdapter
     var nickname : String = ""
-
     val user = Firebase.auth.currentUser
     val db = Firebase.firestore
     val docRef = db.collection("users").document(user!!.email.toString())
@@ -237,6 +236,8 @@ class BoardInsideActivity  : AppCompatActivity() {
                     val place = binding.tvPlace
                     val totalNum = binding.tvTotalNum
 
+                    val schoolname = binding.tvSchoolname // 수정
+
                     title.text = dataModel!!.title
                     content.text = dataModel!!.content
                     price.text = "${dataModel!!.price}원"
@@ -245,6 +246,9 @@ class BoardInsideActivity  : AppCompatActivity() {
                     nickName.text = dataModel!!.nickname
                     place.text  = dataModel!!.place
                     totalNum.text=  "전체 ${dataModel!!.totalNum}명"
+                    dateTime.text = dataModel!!.datetime
+
+                    schoolname.text = dataModel!!.schoolname // 수정
 
                     val myUid = FireBaseAuth.getUid()
                     val writerUid = dataModel.uid

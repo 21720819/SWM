@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -47,7 +48,6 @@ class BoardEditActivity : AppCompatActivity() {
             val content = binding.etContent.text.toString()
             val totalNum = binding.etTotalNum.text.toString()
             val price = binding.etPrice.text.toString()
-
 
             if(title.isEmpty() || content.isEmpty() ||  totalNum.isEmpty() || price.isEmpty()) {
                 Toast.makeText(applicationContext,"제목, 내용, 모집 인원 수, 가격은 필수로 입력하셔야 합니다.", Toast.LENGTH_LONG).show();
@@ -113,8 +113,25 @@ class BoardEditActivity : AppCompatActivity() {
         if(dateTime.isEmpty() ){
             dateTime = "무관"
         }
-
-
+        var schoolname = binding.schoolname.text.toString() // 수정
+        val user = Firebase.auth.currentUser
+        val schoolEmail = user!!.email.toString()
+        val splitArray = schoolEmail.split("@")
+        if (splitArray[1].equals("ynu.ac.kr")  || splitArray[1].equals("yu.ac.kr")) {
+            schoolname = "영남대"
+        }
+        if (splitArray[1].equals("knu.ac.kr")) {
+            schoolname = "경북대"
+        }
+        if (splitArray[1].equals("kmu.ac.kr")) {
+            schoolname = "계명대"
+        }
+        if (splitArray[1].equals("cu.ac.kr")){
+            schoolname = "대구카톨릭대"
+        }
+        if (splitArray[1].equals("daegu.ac.kr")){
+            schoolname = "대구대"
+        }
         FireBaseRef.boardRef
             .child(key)
             .setValue(
@@ -127,7 +144,8 @@ class BoardEditActivity : AppCompatActivity() {
                     FireBaseAuth.getTime(),
                     binding.etTotalNum.text.toString(),
                     binding.etPrice.text.toString(),
-                    FireBaseAuth.getUid()
+                    FireBaseAuth.getUid(),
+                    schoolname // 수정
                 )
             )
         Toast.makeText(this, "글 수정 완료", Toast.LENGTH_LONG).show()

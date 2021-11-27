@@ -35,7 +35,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap?) {
 
         val user = Firebase.auth.currentUser
-        //val db = Firebase.firestore
         val schoolEmail = user!!.email.toString()
         val splitArray = schoolEmail.textSplit("@")
         if (splitArray[1].equals("ynu.ac.kr")  || splitArray[1].equals("yu.ac.kr")) {
