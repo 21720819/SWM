@@ -1,6 +1,7 @@
 package com.sharewithme.swm
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -11,6 +12,7 @@ class MainMenu : AppCompatActivity() {
     private val user = Firebase.auth.currentUser
     private val db = Firebase.firestore
     private val docRef = db.collection("users").document(user!!.email.toString())
+    var lastTimeBackPressed : Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,4 +22,5 @@ class MainMenu : AppCompatActivity() {
             .update("latestDate", SimpleDateFormat("yyyy. MM. dd").format(System.currentTimeMillis()))
 
     }
+
 }

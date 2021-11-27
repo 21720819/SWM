@@ -48,7 +48,8 @@
                         android:id="@+id/tv_postPrice"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="right"
                         android:text="1000원"
                         android:textColor="#000000"
                         android:textSize="20sp" />
@@ -135,8 +136,8 @@
                         android:id="@+id/tv_totalNum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginEnd="10dp"
+                        android:gravity="right"
                         android:text="전체 4명"
                         android:textColor="#4311C6"
                         android:textSize="15sp" />

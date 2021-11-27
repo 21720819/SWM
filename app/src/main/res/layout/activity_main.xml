@@ -87,10 +87,9 @@
 
     <CheckBox
         android:id="@+id/cb_Login"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/cb_bg"
         android:button="@android:color/transparent"
