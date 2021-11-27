@@ -8,6 +8,9 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -64,14 +67,33 @@ class BoardWriteActivity : AppCompatActivity() {
             val uid = FireBaseAuth.getUid()
             val time = FireBaseAuth.getTime()
 
+            var schoolname = binding.schoolname.text.toString()
 
+            val user = Firebase.auth.currentUser
+            val schoolEmail = user!!.email.toString()
+            val splitArray = schoolEmail.split("@")
+            if (splitArray[1].equals("ynu.ac.kr")  || splitArray[1].equals("yu.ac.kr")) {
+                schoolname = "영남대"
+            }
+            if (splitArray[1].equals("knu.ac.kr")) {
+                schoolname = "경북대"
+            }
+            if (splitArray[1].equals("kmu.ac.kr")) {
+                schoolname = "계명대"
+            }
+            if (splitArray[1].equals("cu.ac.kr")){
+                schoolname = "대구카톨릭대"
+            }
+            if (splitArray[1].equals("daegu.ac.kr")){
+                schoolname = "대구대"
+            }
 
             if(title.isEmpty() || content.isEmpty() ||  totalNum.isEmpty() || price.isEmpty()) {
                 Toast.makeText(applicationContext,"제목, 내용, 모집 인원 수, 가격은 필수로 입력하셔야 합니다.", Toast.LENGTH_LONG).show();
             }
 
             else{
-//여기서 글 수 +1
+            //여기서 글 수 +1
                 docRef
                     .update("cntDone", preCntDone.toInt()+1)
 
@@ -102,7 +124,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
                 FireBaseRef.boardRef
                     .child(key)
-                    .setValue(BoardModel(title,content,datetime,place,nickname,time,totalNum,price,uid))
+                    .setValue(BoardModel(title,content,datetime,place,nickname,time,totalNum,price,uid,schoolname))
 
                 Toast.makeText(this, "글 작성 완료", Toast.LENGTH_LONG).show()
 

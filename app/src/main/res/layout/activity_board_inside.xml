@@ -110,7 +110,6 @@
                             android:id="@+id/tvPlace"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:drawablePadding="5dp"
@@ -127,6 +126,10 @@
                             android:text="시간과 날짜"
                             app:drawableLeftCompat="@drawable/img_time" />
 
+                        <TextView
+                            android:id="@+id/tvSchoolname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
                         <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
