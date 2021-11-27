@@ -16,7 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:context=".board.BoardInsideActivity" >
+                tools:context=".board.BoardInsideActivity">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -25,13 +25,13 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="7dp"
                         android:src="@drawable/img_logo" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="105dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="57dp"
                         android:gravity="center"
                         android:text="게시판"
                         android:textColor="@color/black"
@@ -44,7 +44,7 @@
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="115dp"
+                        android:layout_marginLeft="-45dp"
                         android:src="@drawable/main_menu"
                         android:visibility="invisible" />
 
@@ -91,9 +91,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
                             android:gravity="start"
                             android:text="1000원"
-                            android:layout_marginEnd="10dp"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -138,10 +138,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="130dp"
                             android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
                             android:drawablePadding="10dp"
                             android:gravity="start"
                             android:text="전체 15명"
-                            android:layout_marginEnd="10dp"
                             android:textColor="@color/design_default_color_primary"
                             android:textSize="15sp" />
 
@@ -193,13 +193,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="30dp" />
+                    android:layout_marginRight="20dp" />
 
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#C4C4C4"/>
+                    android:background="#C4C4C4" />
 
 
                 <ListView
@@ -230,9 +230,8 @@
                 android:id="@+id/btnComment"
                 android:src="@drawable/btnwrite"
                 android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="40dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="66dp"/>
 
         </LinearLayout>
     </RelativeLayout>

@@ -16,17 +16,17 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="7dp"
                 android:src="@drawable/img_logo"/>
 
             <TextView
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:textStyle="bold"
                 android:text="글 쓰기"
                 android:textSize="22sp"
-                android:layout_marginLeft="115dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginRight="57dp"/>
 
         </LinearLayout>
 
@@ -82,16 +82,15 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/img_explain"/>
 
-                <Button
+                <android.widget.Button
                     android:id="@+id/writeBtn"
                     android:text="고객센터에 글 올리기"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
-                    android:background="@drawable/background_radius_purple"
-                    android:layout_margin="10dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_height="wrap_content"/>
+                    android:background="@drawable/bt_bg"
+                    android:layout_margin="30dp"
+                    android:layout_height="45dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -103,7 +102,7 @@
         <ImageView
             android:id="@+id/imageArea"
             android:src="@drawable/img_camera_bk"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="100dp"/>
 
