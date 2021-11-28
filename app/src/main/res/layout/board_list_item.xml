@@ -38,10 +38,7 @@
                         android:text="깻잎 같이사요!"
                         android:textColor="#000000"
                         android:textSize="20sp" />
-                    <TextView
-                        android:id="@+id/tv_schoolname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -129,6 +126,15 @@
                         android:text="하리"
                         android:textColor="#4311C6"
                         android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_schoolName"
+                        android:text="(영남대학교)"
+                        android:textColor="#4311C6"
+                        android:textSize="15sp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <View
                         android:layout_width="0dp"

@@ -12,10 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.sharewithme.swm.R
@@ -24,11 +26,18 @@ import com.sharewithme.swm.utils.FireBaseRef
 import java.io.ByteArrayOutputStream
 
 class BoardEditActivity : AppCompatActivity() {
+    private var auth: FirebaseAuth? = null
 
     private lateinit var key:String
 
     private lateinit var binding : ActivityBoardEditBinding
     private var isImageUpload = false
+
+    val user = Firebase.auth.currentUser
+    val db = Firebase.firestore
+    val docRef = db.collection("users").document(user!!.email.toString())
+    var nickname : String = ""
+
 
     private val TAG = BoardEditActivity::class.java.simpleName
 
@@ -38,9 +47,20 @@ class BoardEditActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_board_edit)
 
+
         key = intent.getStringExtra("key").toString()
         getBoardData(key)
         getImageData(key)
+
+        auth = FirebaseAuth.getInstance()
+
+        //닉네임 가져오기
+        docRef.get()
+            .addOnSuccessListener { document  ->
+                if (document != null)  {
+                    nickname = "${document["nickname"]}"
+                }
+            }
 
         binding.imgBtnCompleted.setOnClickListener {
 
@@ -113,24 +133,24 @@ class BoardEditActivity : AppCompatActivity() {
         if(dateTime.isEmpty() ){
             dateTime = "무관"
         }
-        var schoolname = binding.schoolname.text.toString() // 수정
+        var schoolName = binding.schoolName.text.toString() // 수정
         val user = Firebase.auth.currentUser
         val schoolEmail = user!!.email.toString()
         val splitArray = schoolEmail.split("@")
         if (splitArray[1].equals("ynu.ac.kr")  || splitArray[1].equals("yu.ac.kr")) {
-            schoolname = "영남대"
+            schoolName = "영남대"
         }
         if (splitArray[1].equals("knu.ac.kr")) {
-            schoolname = "경북대"
+            schoolName = "경북대"
         }
         if (splitArray[1].equals("kmu.ac.kr")) {
-            schoolname = "계명대"
+            schoolName = "계명대"
         }
         if (splitArray[1].equals("cu.ac.kr")){
-            schoolname = "대구카톨릭대"
+            schoolName = "대구카톨릭대"
         }
         if (splitArray[1].equals("daegu.ac.kr")){
-            schoolname = "대구대"
+            schoolName = "대구대"
         }
         FireBaseRef.boardRef
             .child(key)
@@ -140,12 +160,12 @@ class BoardEditActivity : AppCompatActivity() {
                     binding.etContent.text.toString(),
                     dateTime,
                     place,
-                    "Hello",
+                    nickname,
                     FireBaseAuth.getTime(),
                     binding.etTotalNum.text.toString(),
                     binding.etPrice.text.toString(),
                     FireBaseAuth.getUid(),
-                    schoolname // 수정
+                    schoolName
                 )
             )
         Toast.makeText(this, "글 수정 완료", Toast.LENGTH_LONG).show()

@@ -96,7 +96,7 @@
                         android:layout_height="1dp"
                         android:background="#C4C4C4" />
                     <TextView
-                        android:id="@+id/schoolname"
+                        android:id="@+id/schoolName"
                         android:layout_width="0dp"
                         android:layout_height="0dp" />
                     <LinearLayout
