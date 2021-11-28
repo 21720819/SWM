@@ -235,8 +235,7 @@ class BoardInsideActivity  : AppCompatActivity() {
                     val nickName = binding.tvNickName
                     val place = binding.tvPlace
                     val totalNum = binding.tvTotalNum
-
-                    val schoolname = binding.tvSchoolname // 수정
+                    val schoolName = binding.tvSchoolName
 
                     title.text = dataModel!!.title
                     content.text = dataModel!!.content
@@ -247,8 +246,7 @@ class BoardInsideActivity  : AppCompatActivity() {
                     place.text  = dataModel!!.place
                     totalNum.text=  "전체 ${dataModel!!.totalNum}명"
                     dateTime.text = dataModel!!.datetime
-
-                    schoolname.text = dataModel!!.schoolname // 수정
+                    schoolName.text = "(${dataModel!!.schoolName})"
 
                     val myUid = FireBaseAuth.getUid()
                     val writerUid = dataModel.uid

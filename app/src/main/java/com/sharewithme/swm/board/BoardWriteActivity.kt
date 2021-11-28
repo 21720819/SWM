@@ -8,9 +8,6 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -38,9 +35,10 @@ class BoardWriteActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_board_write)
 
         auth = FirebaseAuth.getInstance()
+        
+        //닉네임 가져오기
 
         var nickname : String = ""
-
         docRef.get()
             .addOnSuccessListener { document  ->
                 if (document != null)  {
@@ -67,25 +65,25 @@ class BoardWriteActivity : AppCompatActivity() {
             val uid = FireBaseAuth.getUid()
             val time = FireBaseAuth.getTime()
 
-            var schoolname = binding.schoolname.text.toString()
+            var schoolName = binding.schoolName.text.toString()
 
             val user = Firebase.auth.currentUser
             val schoolEmail = user!!.email.toString()
             val splitArray = schoolEmail.split("@")
             if (splitArray[1].equals("ynu.ac.kr")  || splitArray[1].equals("yu.ac.kr")) {
-                schoolname = "영남대"
+                schoolName = "영남대"
             }
             if (splitArray[1].equals("knu.ac.kr")) {
-                schoolname = "경북대"
+                schoolName = "경북대"
             }
             if (splitArray[1].equals("kmu.ac.kr")) {
-                schoolname = "계명대"
+                schoolName = "계명대"
             }
             if (splitArray[1].equals("cu.ac.kr")){
-                schoolname = "대구카톨릭대"
+                schoolName = "대구카톨릭대"
             }
             if (splitArray[1].equals("daegu.ac.kr")){
-                schoolname = "대구대"
+                schoolName = "대구대"
             }
 
             if(title.isEmpty() || content.isEmpty() ||  totalNum.isEmpty() || price.isEmpty()) {
@@ -124,7 +122,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
                 FireBaseRef.boardRef
                     .child(key)
-                    .setValue(BoardModel(title,content,datetime,place,nickname,time,totalNum,price,uid,schoolname))
+                    .setValue(BoardModel(title,content,datetime,place,nickname,time,totalNum,price,uid,schoolName))
 
                 Toast.makeText(this, "글 작성 완료", Toast.LENGTH_LONG).show()
 

@@ -41,7 +41,7 @@ class BoardListAdapter(private val boardList : MutableList<BoardModel>) : BaseAd
         val totalNum = view?.findViewById<TextView>(R.id.tv_totalNum)
         val wirttenTime= boardList[position].time
 
-        val schoolname = view?.findViewById<TextView>(R.id.tv_schoolname) // 수정
+        val schoolName = view?.findViewById<TextView>(R.id.tv_schoolName)
 
         title!!.text = boardList[position].title
         price!!.text = "${boardList[position].price}원"
@@ -50,8 +50,7 @@ class BoardListAdapter(private val boardList : MutableList<BoardModel>) : BaseAd
         totalNum!!.text = "전체 ${boardList[position].totalNum}명"
         nickName!!.text = boardList[position].nickname
         postedTime!!.text = changeTime(wirttenTime)
-
-        schoolname!!.text = boardList[position].schoolname // 수정
+        schoolName!!.text = "(${boardList[position].schoolName})"
 
         return view!!
     }

@@ -10,5 +10,5 @@ data class BoardModel (
     val totalNum :String = "",
     val price : String = "",
     val uid : String = "",
-    val schoolname : String = "" // 수정
+    val schoolName : String = ""
 )
